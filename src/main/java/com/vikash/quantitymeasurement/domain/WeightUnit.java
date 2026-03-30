@@ -1,14 +1,16 @@
-package com.vikash.quantitymeasurement;
+package com.vikash.quantitymeasurement.domain;
 
-public enum LengthUnit implements IMeasurable{
-	FEET(12.0),
-	INCHES(1.0),
-	YARDS(36),
-	CENTIMETERS(1.0/2.54);
+public enum WeightUnit implements IMeasurable {
+	MILLIGRAM(0.000001),
+	GRAM(0.001),
+	KILOGRAM(1.0),
+	POUND(0.453592),
+	OUNCE(0.0283495),
+	TONNE(1000.0);
 	
 	private final double conversionFactor;
 	
-	LengthUnit(double conversionFactor) {
+	WeightUnit(double conversionFactor){
 		this.conversionFactor=conversionFactor;
 	}
 	
@@ -18,7 +20,7 @@ public enum LengthUnit implements IMeasurable{
 	}
 	
 	public double convertToBaseUnit(double value) {
-		return value * getConversionFactor(); 
+		return value*getConversionFactor();
 	}
 	
 	public double convertFromBaseUnit(double value) {

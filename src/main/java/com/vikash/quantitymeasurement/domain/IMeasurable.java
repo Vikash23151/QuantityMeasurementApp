@@ -1,4 +1,4 @@
-package com.vikash.quantitymeasurement;
+package com.vikash.quantitymeasurement.domain;
 
 public interface IMeasurable {
 	
